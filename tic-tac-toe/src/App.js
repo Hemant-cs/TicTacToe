@@ -157,11 +157,17 @@ function App() {
           </tbody>
         </table>
       </div>
-      {winFlag && (
-        <h1>{`${currentPlayer === "X" ? "O" : "X"} won the Match`}</h1>
-      )}
-      {tiedFlag && <h1>{`Match Tied`}</h1>}
-      {(winFlag || tiedFlag) && <button onClick={handleReset}>Reset</button>}
+      <div className="WinOrDraw">
+        {winFlag && (
+          <h1>{`${currentPlayer === "X" ? "O" : "X"} won the Match`}</h1>
+        )}
+        {tiedFlag && <h1>{`Match Tied`}</h1>}
+        {(winFlag || tiedFlag) && <button onClick={handleReset}>Reset</button>}
+      </div>
+      <p className="footer">
+        Crafted with {"\u2764\uFE0F"} by Hemant CS &copy;{" "}
+        {new Date().getFullYear()}. All rights reserved.
+      </p>
     </div>
   );
 }
